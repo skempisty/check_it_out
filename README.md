@@ -4,3 +4,6 @@
 ##and other people can rate and comment!
 
 
+@user = User.find
+
+@user.songs << @song
