@@ -1,9 +1,7 @@
-User.delete_all
+User.destroy_all
 Post.delete_all
 
 # User seed
-
-# binding.pry
 
 user1 = User.create(
   email: "stephen.kempisty@email.com",
