@@ -1,0 +1,14 @@
+<h1>Posts#index</h1>
+
+
+<% @posts.order(created_at: :desc).each do |post| %>
+  <div class="post">
+    <div class="title">
+      <%= post.title %>
+    </div>
+    <div class="content">
+      <%= post.words %>
+    </div>
+  </div>
+  <br>
+<% end %>

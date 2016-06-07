@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20160606205338) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "followings", ["follower_id", "user_id"], name: "index_followings_on_follower_id_and_user_id", unique: true, using: :btree
+  add_index "followings", ["follower_id"], name: "index_followings_on_follower_id", using: :btree
+  add_index "followings", ["user_id"], name: "index_followings_on_user_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "words"
