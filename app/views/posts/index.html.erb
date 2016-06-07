@@ -3,8 +3,13 @@
 
 <% @posts.order(created_at: :desc).each do |post| %>
   <div class="post">
-    <div class="title">
-      <%= post.title %>
+    <div class="original-poster-info">
+      <div class="profile-pic">
+
+      </div>
+      <div class="profile-info">
+
+      </div>
     </div>
     <div class="content">
       <%= post.words %>

@@ -3,19 +3,23 @@ Post.delete_all
 
 # User seed
 
+binding.pry
+
 user1 = User.create(
   email: "stephen.kempisty@email.com",
   name: "Stephen Kempisty",
   handle: "Scubasteve719",
   password: "abc123",
-  password_confirmation: "abc123"
+  password_confirmation: "abc123",
+  profile_pic: File.open(File.join(Rails.root, '/app/assets/images/seed_pic1.jpg'))
 )
 user2 = User.create(
   email: "ariel.myren@email.com",
   name: "Ariel Myren",
   handle: "Broadwaygirl",
   password: "abc123",
-  password_confirmation: "abc123"
+  password_confirmation: "abc123",
+  profile_pic: File.open(File.join(Rails.root, '/app/assets/images/seed_pic1.jpg'))
 )
 
 # Post seed
