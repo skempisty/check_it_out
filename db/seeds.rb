@@ -3,7 +3,7 @@ Post.delete_all
 
 # User seed
 
-binding.pry
+# binding.pry
 
 user1 = User.create(
   email: "stephen.kempisty@email.com",
