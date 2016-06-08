@@ -1,5 +1,6 @@
 User.destroy_all
-Post.delete_all
+Post.destroy_all
+Comment.delete_all
 
 # User seed
 
@@ -49,5 +50,8 @@ user2.posts.push(
 user1.followers << user2
 
 # Comment seed
+
+comment1 = Post.first.comments.create(user: user2, words: "I didn't come here to make friends!")
+comment1.comments.create(user: user1, words: "Then why did you come here?")
 
 
