@@ -1,0 +1,40 @@
+<div class="comment">
+  <div class="original-poster-info">
+    <div class="profile-pic">
+      <% if comment.user != nil %>
+        <%= image_tag comment.user.profile_pic.url(:thumb) %>
+      <% else %>
+        <%= image_tag 'anon.jpg', class: 'default-image' %>
+      <% end %>
+    </div>
+    <div class="profile-info">
+      <% if comment.user != nil %>
+        <%= comment.user.handle %><br>
+      <% end %>
+
+      <% if comment.user != current_user && comment.user != nil && current_user != nil %>
+        <% if followed?(comment.user) == false %>
+
+          <%= link_to "Follow", follow_path(id: comment.user.id), class: 'btn btn-info', method: :post %>
+        <% else %>
+          <%= link_to "Unfollow", unfollow_path(id: comment.user.id), class: 'btn btn-danger', method: :delete %>
+        <% end %>
+      <% end %>
+
+      <% if comment.user == current_user && current_user != nil%>
+        <%= link_to "Delete", post_path(id: comment.id), method: :delete, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="content">
+    <div class="words">
+      <%= comment.words %>
+    </div>
+  </div>
+</div>
+
+<div class="comment-indent">
+  <% comment.comments.order(created_at: :desc).each do |comment| %>
+    <%= render "comment", comment: comment %>
+  <% end %>
+</div>
