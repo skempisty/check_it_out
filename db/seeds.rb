@@ -17,7 +17,7 @@ user2 = User.create(
   handle: "Broadwaygirl",
   password: "abc123",
   password_confirmation: "abc123",
-  profile_pic: File.open(File.join(Rails.root, '/app/assets/images/seed_pic1.jpg'))
+  profile_pic: File.open(File.join(Rails.root, '/app/assets/images/trump_santa.jpg'))
 )
 
 # Post seed

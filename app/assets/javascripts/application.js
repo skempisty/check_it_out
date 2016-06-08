@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var loggedInUser = $('.user-logged-in');
+if (loggedInUser.text().trim() === "") {
+  loggedInUser.removeClass('active').addClass('hidden');
+}
