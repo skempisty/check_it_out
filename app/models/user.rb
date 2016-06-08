@@ -8,12 +8,10 @@ class User < ActiveRecord::Base
   has_attached_file(
     :profile_pic,
     styles: {
-      thumb: '100x100>',
+      thumb: '150x150>',
       square: '200x200#',
       medium: '300x300>'
     },
-    # :path => "/users/:style/:id/:filename"
-    # :path =>  "/:class/:attachment/:id_partition/:style/:filename"
   )
 
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
