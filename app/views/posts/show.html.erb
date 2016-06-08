@@ -40,9 +40,24 @@
   </div>
 </div>
 
+<%= form_for([@post, @comment], html: {class: "hidden new_comment", id: "#new_comment_#{@post.id}"}) do |f| %>
+  <%= f.text_area :words %>
+  <br>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<button class="toggle-comment-form">Add a Comment</button>
+
 <% if @post.comments.count > 0 %>
   <h3>Comments</h3>
   <% @post.comments.order(created_at: :desc).each do |comment| %>
     <%= render "comment", comment: comment %>
   <% end %>
 <% end %>
+
+<script>
+$(".toggle-comment-form").on("click", function(e) {
+  $(".new_comment").removeClass("hidden");
+  $(e.target).addClass('hidden');
+});
+</script>

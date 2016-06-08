@@ -36,6 +36,14 @@
         <%= comment.words %>
       </div>
     </div>
+    <div class="reply">
+      <h5>Reply</h5>
+      <%= form_for([comment, @comment], html: {class: "new_comment", id: "#new_comment_#{comment.id}"}) do |f| %>
+        <%= f.text_area :words %>
+        <br>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
   </div>
 
   <% if comment.comments.count > 0 %>
