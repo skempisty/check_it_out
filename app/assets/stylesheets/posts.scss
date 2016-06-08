@@ -3,15 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-  border: solid 1px red;
+
   background: grey;
   height: 300px;
 }
 .original-poster-info {
   float: left;
-  width: 15%;
+  // width: 15%;
+  min-width: 150px;
   height: 100%;
   border: solid 1px red;
+  background: green;
 }
 .profile-pic {
   width: 100%;
@@ -22,12 +24,24 @@
   height: 60%;
   width: 100%;
 }
+
+.content {
+  // float: right;
+  background: purple;
+  width: auto;
+  height: 100%;
+}
 .title {
   background: red;
+  height: 10%;
 }
-.content {
-  float: right;
-  width: 85%;
-  height: 100%;
+.words {
+  // width: 85%;
+  height: 90%;
   background: lightblue;
+}
+.default-image {
+  width: 150px;
+  height: 150px;
+
 }

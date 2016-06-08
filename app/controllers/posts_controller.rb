@@ -7,9 +7,20 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new post_params
+    if @post.save
+      post = Post.create(post_params)
+      if current_user != nil
+        current_user.posts << post
+      end
+      redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -19,5 +30,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
+  end
+
+private
+  def post_params
+    params.require(:post).permit(:title, :words)
+
   end
 end
