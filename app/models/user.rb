@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :posts
-  has_many :followings
+  has_many :posts, dependent: :destroy
+  has_many :followings, dependent: :destroy
   has_many :followers, through: :followings
 
   has_attached_file(
