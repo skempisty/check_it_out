@@ -1,5 +1,5 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-  <%= link_to post_path(post) do %>
+
     <div class="post">
       <div class="original-poster-info">
         <div class="profile-pic">
@@ -29,15 +29,16 @@
         </div>
       </div>
       <div class="content">
-        <div class="title">
-          <%= post.title %>
-        </div>
+        <%= link_to post_path(post) do %>
+          <div class="title">
+            <%= post.title %>
+          </div>
+        <% end %>
         <div class="words">
           <%= post.words %>
         </div>
       </div>
     </div>
-  <% end %>
   <br>
 <% end %>
 

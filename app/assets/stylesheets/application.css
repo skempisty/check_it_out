@@ -22,6 +22,17 @@
   margin-bottom: 20px;
 }
 
+.content {
+  margin-bottom: 150px;
+}
+
 .reply {
   margin-bottom: 20px;
 }
+
+body {
+  background-image: url('/assets/background.png');
+  background-size: cover;
+}
+
+

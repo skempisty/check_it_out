@@ -36,7 +36,6 @@
         <%= comment.words %>
       </div>
     </div>
-
     <% if comment.commentable_type == 'Post' %>
       <div class="reply">
         <h5>Reply</h5>
@@ -51,7 +50,7 @@
 
   <% if comment.comments.count > 0 %>
     <div class="comment-indent">
-      <% comment.comments.order(created_at: :desc).each do |comment| %>
+      <% comment.comments.order(created_at: :asc).each do |comment| %>
         <%= render "comment", comment: comment %>
       <% end %>
     </div>
