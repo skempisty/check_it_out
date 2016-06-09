@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       if current_user != nil
         current_user.posts << @post
       end
-      redirect_to posts_path
+      redirect_to post_path(@post.id)
     else
       render 'new'
     end
