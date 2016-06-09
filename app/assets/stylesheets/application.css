@@ -17,3 +17,11 @@
 .hidden {
   display: none;
 }
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.reply {
+  margin-bottom: 20px;
+}

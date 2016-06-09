@@ -1,36 +1,22 @@
 class CommentsController < ApplicationController
-  # def create
-  #   @post =
-  #   if @comment.save
-
-  # end
 
   def destroy
   end
 
-
-# private
-#   def comment_params
-#     params.require(:comment).permit(:words)
-#   end
-
-def create
-      @commentable = find_commentable
-      @comment = @commentable.comments.build(comment_params)
-      redirect_to root_path
-  end
-
-  private
-
-  def find_commentable
-    params.each do |name, value|
-      if name =~ /(.+)_id$/
-        return $1.classify.constantize.find(value)
-      end
+  def create
+    if params[:post_id] != nil
+      @post = Post.find(params[:post_id])
+      @comment = Comment.create comment_params
+      @post.comments << @comment
+    else
+      @comment = Comment.find(params[:comment_id])
+      comment = Comment.create comment_params
+      @comment.comments << comment
     end
-    nil
+    redirect_to :back
   end
 
+private
   def comment_params
     params.require(:comment).permit(:words)
   end
