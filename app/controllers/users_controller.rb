@@ -14,9 +14,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user)
   end
 
   def update
+    @user = User.find(current_user)
+    if @user.save
+      @user.update user_params
+      redirect_to posts_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
