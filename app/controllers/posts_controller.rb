@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     if @post.save
       if current_user != nil
-        current_user.posts << post
+        current_user.posts << @post
       end
       redirect_to posts_path
     else
