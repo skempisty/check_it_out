@@ -6,18 +6,18 @@
     data-commments-on-type="<%= comment.commentable_type.downcase %>">
     <div class="original-poster-info">
       <div class="profile-pic">
-        <% if comment.user != nil %>
+        <% if comment.user %>
           <%= image_tag comment.user.profile_pic.url(:thumb) %>
         <% else %>
           <%= image_tag 'anon.jpg', class: 'default-image' %>
         <% end %>
       </div>
       <div class="profile-info">
-        <% if comment.user != nil %>
+        <% if comment.user %>
           <%= comment.user.handle %><br>
         <% end %>
 
-        <% if comment.user != current_user && comment.user != nil && current_user != nil %>
+        <% if comment.user != current_user && comment.user && current_user %>
           <% if followed?(comment.user) == false %>
 
             <%= link_to "Follow", follow_path(id: comment.user.id), class: 'btn btn-info btn-xs', method: :post %>
@@ -34,13 +34,13 @@
         <%= comment.words %>
         <div class="post-options">
           <% if comment.commentable_type == "Post" %>
-            <% if comment.user == current_user && current_user != nil%>
+            <% if comment.user == current_user && current_user %>
               <%= link_to "Delete", post_comment_path(id: comment.id, post_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
               <%= link_to "Edit", edit_post_comment_path(id: comment.id, post_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
             <% end %>
           <% end %>
           <% if comment.commentable_type == "Comment" %>
-            <% if comment.user == current_user && current_user != nil%>
+            <% if comment.user == current_user && current_user %>
               <%= link_to "Delete", comment_comment_path(id: comment.id, comment_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
               <%= link_to "Edit", edit_comment_comment_path(id: comment.id, comment_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
             <% end %>

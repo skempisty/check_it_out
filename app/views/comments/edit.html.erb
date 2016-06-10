@@ -1,6 +1,6 @@
 <h2>Edit Comment:</h2>
 
-<% if @comment != nil %>
+<% if @comment %>
   <% @comment.errors.full_messages.each do |message| %>
       <p class="text-danger"><strong><%= message %></strong></p>
   <% end %>

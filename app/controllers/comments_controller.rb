@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    if params[:post_id] != nil
+    if params[:post_id]
       @post = Post.find(params[:post_id])
       @comment = Comment.create comment_params
       @post.comments << @comment
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    if params[:post_id] != nil
+    if params[:post_id]
       @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
     else
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if params[:post_id] != nil
+    if params[:post_id]
       @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
       @comment.update comment_params
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    if params[:post_id] != nil
+    if params[:post_id]
       @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
       @comment.destroy

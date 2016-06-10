@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     if @post.save
-      if current_user != nil
+      if current_user
         current_user.posts << @post
       end
       redirect_to post_path(@post.id)

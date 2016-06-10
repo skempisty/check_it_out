@@ -3,18 +3,18 @@
     <div class="post">
       <div class="original-poster-info">
         <div class="profile-pic">
-          <% if post.user != nil %>
+          <% if post.user %>
             <%= image_tag post.user.profile_pic.url(:thumb) %>
           <% else %>
             <%= image_tag 'anon.jpg', class: 'default-image' %>
           <% end %>
         </div>
         <div class="profile-info">
-          <% if post.user != nil %>
+          <% if post.user %>
             <%= post.user.handle %><br>
           <% end %>
 
-          <% if post.user != current_user && post.user != nil && current_user != nil %>
+          <% if post.user != current_user && post.user && current_user %>
             <% if followed?(post.user) == false %>
               <%= link_to "Follow", follow_path(id: post.user.id), class: 'btn btn-info btn-xs', method: :post %>
             <% else %>
@@ -34,7 +34,7 @@
         <div class="words">
           <%= post.words %>
           <div class="post-options">
-            <% if post.user == current_user && current_user != nil%>
+            <% if post.user == current_user && current_user %>
               <%= link_to "Delete", post_path(id: post.id), method: :delete, class: 'btn btn-danger btn-xs' %>
               <%= link_to "Edit", edit_post_path(id: post.id), class: 'btn btn-warning btn-xs' %>
             <% end %>
