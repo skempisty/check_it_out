@@ -17,9 +17,16 @@
 
 
 
-$(document).ready(function() {
+var ready;
+ready = function () {
   var loggedInUser = $('#user-logged-in');
   if (loggedInUser.text() === "") {
     loggedInUser.addClass('hidden');
   }
+
+  var properPadding = (50 - $('img.pull-left').height()) / 2;
+  $('a.pull-left').css("padding", properPadding)
 });
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

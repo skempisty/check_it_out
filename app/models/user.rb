@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   has_attached_file(
     :profile_pic,
     styles: {
+      mini: '40x40>',
       thumb: '150x150>',
-      square: '200x200#',
-      medium: '300x300>'
+      square: '200x200#'
     },
   )
 

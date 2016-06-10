@@ -31,6 +31,24 @@ user1.posts.push(
   Post.create(
     title: "What do you guys think about Rocket League",
     words: "made a pretty sweet shot the other day"
+  ),
+  Post.create(
+    title: "This is a pretty long post check it out!",
+    words: "Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!
+    Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!Is this going to break the app? Lets find out!"
   )
 )
 
