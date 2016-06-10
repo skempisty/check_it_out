@@ -20,17 +20,22 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
     else
+
+      # NOT WORKING
       @comment = Comment.find(params[:id])
-      @reply = Comment.find(params[:comment_id])
+      @reply = Comment.find(params[:commentable_id])
     end
   end
 
   def update
     if params[:post_id] != nil
       @post = Post.find(params[:post_id])
-      @comment = Comment.update comment_params
-      redirect_to posts_path
+      @comment = Comment.find(params[:id])
+      @comment.update comment_params
+      redirect_to post_path(@post.id)
     else
+
+      # NOT WORKING
       @comment = Comment.find(params[:comment_id])
       comment = Comment.update comment_params
       redirect_to posts_path
@@ -38,7 +43,18 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    if params[:post_id] != nil
+      @post = Post.find(params[:post_id])
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+      redirect_to post_path(@post.id)
+    else
 
+      # NOT WORKING
+      @comment = Comment.find(params[:comment_id])
+      comment = Comment.update comment_params
+      redirect_to posts_path
+    end
   end
 
 private
