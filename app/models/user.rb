@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     :profile_pic,
     styles: {
       mini: '40x40>',
-      thumb: '150x150>',
+      thumb: '120>x120>',
       square: '200x200#'
     },
   )
