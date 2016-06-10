@@ -1,8 +1,3 @@
-<img src="assets/rocket-league-header.png" align="left" style="background:black; height:100px " />
-
-<br>
-<br>
-
 # Check It Out!
 ## (https://github.com/skempisty/check_it_out)
 ### Author: Stephen Kempisty
@@ -42,7 +37,9 @@ general and accessible for a multitude of audiences.
 
 The order of completion for the app's features revolves around the concept
 of a minimum viable product. Features were completed starting from the most
-basic and necessary, growing in complexity as time permitted.    
+basic and necessary, growing in complexity as time permitted. 
+
+<img src="app/assets/images/erd.png" align="left" style="background:black; height:100px " />   
 
 ##Get Started
 
