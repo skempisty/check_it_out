@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 
   validates :profile_pic, presence: true
+  validates :handle, length: { maximum: 18 }
 
 end

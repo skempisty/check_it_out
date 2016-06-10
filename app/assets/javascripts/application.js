@@ -26,7 +26,7 @@ ready = function () {
 
   var properPadding = (50 - $('img.pull-left').height()) / 2;
   $('a.pull-left').css("padding", properPadding)
-});
+};
 
 $(document).ready(ready);
 $(document).on('page:load', ready);

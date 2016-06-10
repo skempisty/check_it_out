@@ -36,17 +36,17 @@
         <%= comment.words %>
       </div>
     </div>
+  </div>
 
     <!-- REPLY FORM -->
 
     <% if comment.commentable_type == 'Post' %>
       <div class="reply">
         <%= form_for([comment, @comment], html: {class: "hidden new_reply", id: "new_reply_#{comment.id}"}) do |f| %>
-          <%= f.text_area :words %>
+          <%= f.text_area :words %> <br>
           <%= f.submit "Submit" %>
-        <% end %>
       </div>
-  </div>
+    <% end %>
 
     <!--  -->
 
@@ -65,7 +65,7 @@
 
 <script>
 $(".toggle-reply-form").on("click", function(e) {
-  $(e.target).siblings().eq(0).find('form').removeClass("hidden");
+  $(e.target).siblings().eq(1).find('form').removeClass("hidden");
   $(e.target).addClass('hidden');
 });
 </script>

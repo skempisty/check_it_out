@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  get '/followed', to: "posts#follow_index"
+
   resources :comments, only: [] do
     resources :comments, only: [:create]
   end
