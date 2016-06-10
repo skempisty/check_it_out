@@ -36,23 +36,36 @@
         <%= comment.words %>
       </div>
     </div>
+
+    <!-- REPLY FORM -->
+
     <% if comment.commentable_type == 'Post' %>
       <div class="reply">
-        <h5>Reply</h5>
-        <%= form_for([comment, @comment], html: {class: "new_comment", id: "#new_comment_#{comment.id}"}) do |f| %>
+        <%= form_for([comment, @comment], html: {class: "hidden new_reply", id: "new_reply_#{comment.id}"}) do |f| %>
           <%= f.text_area :words %>
-          <br>
-          <%= f.submit "Submit" %> <br>
+          <%= f.submit "Submit" %>
         <% end %>
       </div>
-    <% end %>
   </div>
+
+    <!--  -->
+
+<button class="toggle-reply-form">Add a Reply</button>
+
+    <% end %>
 
   <% if comment.comments.count > 0 %>
     <div class="comment-indent">
       <% comment.comments.order(created_at: :asc).each do |comment| %>
-        <%= render "comment", comment: comment %>
+        <%= render "comment", comment: comment %> <br>
       <% end %>
     </div>
   <% end %>
 </div>
+
+<script>
+$(".toggle-reply-form").on("click", function(e) {
+  $(e.target).siblings().eq(0).find('form').removeClass("hidden");
+  $(e.target).addClass('hidden');
+});
+</script>

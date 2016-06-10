@@ -19,7 +19,7 @@
 }
 
 .comment {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .content {
@@ -27,12 +27,20 @@
 }
 
 .reply {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 body {
   background-image: asset-url('background.png');
   background-size: cover;
+}
+
+h3 {
+  color: white;
+}
+
+h5 {
+  color: white;
 }
 
 
