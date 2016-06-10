@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
+  patch '/comments/:id', to: 'comments#update', as: 'comment'
+
   resources :sessions, only: [:create]
   get '/login', to: "sessions#new"
   delete '/logout', to: "sessions#destroy"
