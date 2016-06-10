@@ -1,3 +1,5 @@
+<h2>Edit Comment:</h2>
+
 <% if @comment != nil %>
   <% @comment.errors.full_messages.each do |message| %>
       <p class="text-danger"><strong><%= message %></strong></p>
@@ -6,10 +8,10 @@
   <%= form_for ([@post, @comment]) do |f| %>
     <div class="row">
       <div class="field col-md-3">
-        <%= f.label "Post: " %><br/>
-        <%= f.text_area :words %>
+        <%= f.label "Comment: " %><br/>
+        <%= f.text_area :words, size: "100x10" %>
       </div>
-    <br>
+    </div>
     <div class="row">
       <div class="col-md-2">
         <%= button_tag(type: 'submit', class: 'btn btn-success') do %>

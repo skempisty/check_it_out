@@ -6,17 +6,20 @@
   <div class="row">
     <div class="field col-md-3">
       <%= f.label "Subject: " %><br/>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, size: 101  %>
     </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="field col-md-3">
       <%= f.label "Post: " %><br/>
-      <%= f.text_area :words %>
+      <%= f.text_area :words, size: "100x10" %>
     </div>
-  <br>
+  </div>
   <div class="row">
     <div class="col-md-2">
       <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
-        <i class="icon-ok icon-white"></i> Post!
+        <i class="icon-ok icon-white"></i> Submit
       <% end %>
     </div>
   </div>
