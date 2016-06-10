@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :followings, dependent: :destroy
   has_many :followers, through: :followings
+  has_many :comments, dependent: :destroy
 
   has_attached_file(
     :profile_pic,
@@ -16,7 +17,8 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 
-  validates :profile_pic, presence: true
+  validates :handle, :email, :profile_pic, presence: true
   validates :handle, length: { maximum: 18 }
+  validates :handle, :email, uniqueness: true
 
 end

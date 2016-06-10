@@ -20,20 +20,32 @@
         <% if comment.user != current_user && comment.user != nil && current_user != nil %>
           <% if followed?(comment.user) == false %>
 
-            <%= link_to "Follow", follow_path(id: comment.user.id), class: 'btn btn-info', method: :post %>
+            <%= link_to "Follow", follow_path(id: comment.user.id), class: 'btn btn-info btn-xs', method: :post %>
           <% else %>
-            <%= link_to "Unfollow", unfollow_path(id: comment.user.id), class: 'btn btn-danger', method: :delete %>
+            <%= link_to "Unfollow", unfollow_path(id: comment.user.id), class: 'btn btn-danger btn-xs', method: :delete %>
           <% end %>
         <% end %>
 
-        <% if comment.user == current_user && current_user != nil%>
-          <%= link_to "Delete", post_path(id: comment.id), method: :delete, class: 'btn btn-danger' %>
-        <% end %>
+
       </div>
     </div>
     <div class="content">
       <div class="words">
         <%= comment.words %>
+        <div class="post-options">
+          <% if comment.commentable_type == "Post" %>
+            <% if comment.user == current_user && current_user != nil%>
+              <%= link_to "Delete", post_comment_path(id: comment.id, post_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
+              <%= link_to "Edit", edit_post_comment_path(id: comment.id, post_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
+            <% end %>
+          <% end %>
+          <% if comment.commentable_type == "Comment" %>
+            <% if comment.user == current_user && current_user != nil%>
+              <%= link_to "Delete", comment_comment_path(id: comment.id, comment_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
+              <%= link_to "Edit", edit_comment_comment_path(id: comment.id, comment_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

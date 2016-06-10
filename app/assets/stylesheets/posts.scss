@@ -28,6 +28,7 @@
   height: 60%;
   width: 100%;
   color: lightgreen;
+  text-align: center;
 }
 .content {
   display: table-cell;
@@ -61,7 +62,12 @@
 .original {
   background: lightblue;
 }
-.greenify {
-  color: lightgreen;
+.post_options {
+  position: relative;
+  // float: right;
+
+  width: 200px;
+  height: auto;
+
 }
 
