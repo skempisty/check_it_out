@@ -5,12 +5,16 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
       @comment = Comment.create comment_params
       @post.comments << @comment
-      current_user.comments << @comment
+      if current_user
+        current_user.comments << @comment
+      end
     else
       @comment = Comment.find(params[:comment_id])
       comment = Comment.create comment_params
       @comment.comments << comment
-      current_user.comments << comment
+      if current_user
+        current_user.comments << comment
+      end
     end
     redirect_to :back
   end
