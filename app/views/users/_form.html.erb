@@ -1,45 +1,34 @@
-<div class="add-background">
-  <% @user.errors.full_messages.each do |message| %>
-    <p class="text-danger"><strong><%= message %></strong></p>
-  <% end %>
+<% @user.errors.full_messages.each do |message| %>
+  <p class="text-danger"><strong><%= message %></strong></p>
+<% end %>
 
-  <%= form_for @user do |f| %>
-    <div class="row">
-      <div class="field col-md-3">
-        <%= f.label "Email: " %><br/>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field col-md-3">
-        <%= f.label "Handle: " %><br/>
-        <%= f.text_field :handle %>
-      </div>
-      <div class="field col-md-2">
-        <%= f.label "Name: " %><br/>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field col-md-2">
-        <%= f.label "Password: " %><br/>
-        <%= f.password_field :password %>
-      </div>
-      <div class="field col-md-2">
-        <%= f.label "Password Confirm: " %><br/>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <br>
-      <div class="field col-md-2">
-        <%= f.label "Profile Picture: " %><br/>
-        <%= f.file_field :profile_pic %>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-2">
-        <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
-          <i class="icon-ok icon-white"></i> Submit
-        <% end %>
-      </div>
-
-    </div>
+<%= form_for @user do |f| %>
+  <div class="form-group width-control">
+    <%= f.label "Email" %><span class="mandatory"> *</span><br/>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group width-control">
+    <%= f.label "Handle" %><span class="mandatory"> *</span><br/>
+    <%= f.text_field :handle, class: 'form-control' %>
+  </div>
+  <div class="form-group width-control">
+    <%= f.label "Name" %><br/>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group width-control">
+    <%= f.label "Password" %><span class="mandatory"> *</span><br/>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="form-group width-control">
+    <%= f.label "Password Confirm" %><span class="mandatory"> *</span><br/>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+  <div class="form-group width-control">
+    <%= f.label "Profile Picture" %><span class="mandatory"> *</span><br/>
+    <%= f.file_field :profile_pic %>
+  </div>
+  <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+    <i class="icon-ok icon-white"></i> Submit
   <% end %>
-</div>
+<% end %>
 
