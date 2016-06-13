@@ -35,14 +35,14 @@
         <div class="post-options">
           <% if comment.commentable_type == "Post" %>
             <% if comment.user == current_user && current_user %>
-              <%= link_to "Delete", post_comment_path(id: comment.id, post_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
-              <%= link_to "Edit", edit_post_comment_path(id: comment.id, post_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
+              <%= link_to "Delete", post_comment_path(comment.commentable_id, comment.id), method: :delete, class: 'btn btn-danger btn-xs' %>
+              <%= link_to "Edit", edit_post_comment_path(comment.commentable_id, comment.id), class: 'btn btn-warning btn-xs' %>
             <% end %>
           <% end %>
           <% if comment.commentable_type == "Comment" %>
             <% if comment.user == current_user && current_user %>
-              <%= link_to "Delete", comment_comment_path(id: comment.id, comment_id: comment.commentable_id), method: :delete, class: 'btn btn-danger btn-xs' %>
-              <%= link_to "Edit", edit_comment_comment_path(id: comment.id, comment_id: comment.commentable_id), class: 'btn btn-warning btn-xs' %>
+              <%= link_to "Delete", comment_comment_path(comment.commentable_id, comment.id), method: :delete, class: 'btn btn-danger btn-xs' %>
+              <%= link_to "Edit", edit_comment_comment_path(comment.commentable_id, comment.id), class: 'btn btn-warning btn-xs' %>
             <% end %>
           <% end %>
         </div>
