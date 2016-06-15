@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @page = "index"
     @posts = Post.all
   end
 
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @page = "new"
     @post = Post.new
   end
 
@@ -45,6 +47,7 @@ class PostsController < ApplicationController
   end
 
   def follow_index
+    @page = "followed"
     followed = Following.where(follower_id: current_user.id)
     followed_user_array = []
 

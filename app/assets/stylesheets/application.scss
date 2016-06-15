@@ -14,25 +14,6 @@
  *= require_self
  */
 
-.hidden {
-  display: none;
-}
-
-.comment {
-  border: solid 2px white;
-  border-top-right-radius: 20px;
-  // width: 100%;
-
-}
-
-.content {
-  margin-bottom: 150px;
-}
-
-.reply {
-  // margin-bottom: 20px;
-}
-
 body {
   background-image: asset-url('background.png');
   background-size: cover;
@@ -43,12 +24,21 @@ h2 {
 h3 {
   color: white;
 }
-
 h5 {
   color: white;
 }
 label {
   color: white;
+}
+.hidden {
+  display: none;
+}
+.comment {
+  border: solid 2px white;
+  border-top-right-radius: 20px;
+}
+.content {
+  margin-bottom: 150px;
 }
 .width-control {
   max-width: 350px;
