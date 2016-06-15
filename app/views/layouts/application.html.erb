@@ -28,7 +28,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if @page == "index" %>"><%= link_to "All Posts", posts_path %></li>
-        <li class="<%= 'active' if @page == "followed" %>"><%= link_to "Followed Posts", followed_path %></li>
+        <% if current_user %>
+          <li class="<%= 'active' if @page == "followed" %>"><%= link_to "Followed Posts", followed_path %></li>
+        <% end %>
         <li class="<%= 'active' if @page == "new" %>"><%= link_to "New Post", new_post_path %></li>
       </ul>
 
