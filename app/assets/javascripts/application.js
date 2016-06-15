@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(window).on("load", function() {
-  var properPadding = (50 - $('a.dropdown-toggle img').height()) / 2;
-  $('a.dropdown-toggle').css("padding", properPadding);
+  $(window).on("load", function() {
+$( document ).ready(function() {
+    var properPadding = (50 - $('a.dropdown-toggle img').height()) / 2;
+    $('a.dropdown-toggle').css("padding", properPadding);
+  });
 });

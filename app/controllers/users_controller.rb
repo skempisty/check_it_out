@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @page = 'signup'
     @user = User.new
   end
 

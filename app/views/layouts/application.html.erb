@@ -56,8 +56,8 @@
 <!-- IF NOT LOGGED IN -->
 
         <% if !current_user %>
-          <li><%= link_to "Sign Up", new_user_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
+          <li class="<%= 'active' if @page == "signup" %>"><%= link_to "Sign Up", new_user_path %></li>
+          <li class="<%= 'active' if @page == "login" %>"><%= link_to "Log In", login_path %></li>
         <% end %>
 
 <!--  -->

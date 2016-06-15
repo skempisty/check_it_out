@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update, :destroy]
 
   resources :posts do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
-  get '/followed', to: "posts#follow_index"
+  get 'followed', to: "posts#follow_index"
 
   resources :comments, only: [] do
     resources :comments, only: [:create, :edit, :update, :destroy]
